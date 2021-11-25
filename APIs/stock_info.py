@@ -1,7 +1,7 @@
-from flask import Flask, request
-from flask_restful import Resource, Api
+from flask_restful import Resource
 import yfinance as yf
 import pandas as pd
+
 
 class StockInfo(Resource):
     def get(self, stock):
