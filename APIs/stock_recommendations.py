@@ -9,6 +9,8 @@ class StockRecommendations(Resource):
         info = yf.Ticker(stock)
         df = info.recommendations.reset_index()
         df = df[(df['Date'] > start_date) & (df['Date'] < end_date)]
+        df = df.iloc[::-1]
+        df = df.reset_index(drop=True)
         return df.to_json(date_format='iso')
 
 
@@ -17,4 +19,6 @@ class StockRecommendationsLatest(Resource):
         info = yf.Ticker(stock)
         df = info.recommendations.reset_index()
         df = df[(df['Date'] > start_date) & (df['Date'] < str(datetime.date.today()))]
+        df= df.iloc[::-1]
+        df = df.reset_index(drop=True)
         return df.to_json(date_format='iso')

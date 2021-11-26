@@ -6,4 +6,4 @@ import pandas as pd
 class StockFinancials(Resource):
     def get(self, stock):
         info = yf.Ticker(stock)
-        return info.financials.transpose().to_json()
+        return info.financials.transpose().iloc[-1].to_json(date_format='iso')
