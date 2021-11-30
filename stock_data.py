@@ -19,7 +19,7 @@ api.add_resource(StockDividends, '/stock/<string:stock>/dividends')
 api.add_resource(StockFinancials, '/stock/<string:stock>/financials')
 api.add_resource(StockInstitutionalHolders, '/stock/<string:stock>/institutional_holders')
 
-api.add_resource(StockHistoricDataLatest, '/stock/<string:stock>/history/<string:start_date>')
+api.add_resource(StockHistoricDataLatest, '/stock/<string:stock>/history')
 api.add_resource(StockHistoricData, '/stock/<string:stock>/history/<string:start_date>/<string:end_date>')
 
 api.add_resource(StockRecommendationsLatest, '/stock/<string:stock>/recommendations/<string:start_date>')
