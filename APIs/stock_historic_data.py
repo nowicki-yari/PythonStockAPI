@@ -12,6 +12,7 @@ class StockHistoricData(Resource):
 
 class StockHistoricDataLatest(Resource):
     def get(self, stock, start_date):
-        data = yf.download(stock, start=start_date, end=datetime.date.today())
+        print(datetime.date.today())
+        data = yf.download(stock, start=start_date, end=str(datetime.date.today()))
         data = data.reset_index()
         return data.transpose().to_json(date_format='iso')
