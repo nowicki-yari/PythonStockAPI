@@ -10,6 +10,7 @@ from APIs.stock_recommendations import StockRecommendationsLatest
 from APIs.stock_institutional_holders import StockInstitutionalHolders
 from flask_cors import CORS
 
+
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
@@ -27,4 +28,4 @@ api.add_resource(StockRecommendations, '/stock/<string:stock>/recommendations/<s
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
