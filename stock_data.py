@@ -12,7 +12,7 @@ from APIs.stock_recommendations import StockRecommendationsLatest
 from APIs.stock_institutional_holders import StockInstitutionalHolders
 from flask_cors import CORS
 
-os.environ['Stock_API'] = '2e60b5c63eb37f3d1e6143be7d6c3eb6'
+os.environ['Stock_API'] = ''
 
 app = Flask(__name__)
 api = Api(app)
